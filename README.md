@@ -8,4 +8,5 @@
 and [IDEAJUnitListener](https://github.com/JetBrains/intellij-community/blob/master/java/java-runtime/src/com/intellij/rt/execution/junit/IDEAJUnitListener.java))
 that removes the default parameters of the [JUnit 4 RunListener](https://github.com/junit-team/junit4/blob/main/src/main/java/org/junit/runner/notification/RunListener.java)
 because of that we don't have all the original parameters, but we can use the events to trigger some instantiation in the `testRunStarted` for instance.
+<!-- Plugin description end -->
 
