@@ -1,0 +1,20 @@
+<idea-plugin>
+    <id>com.luneo7.junit4.intellij</id>
+    <name>JUnit 4 Surefire Listener</name>
+    <vendor>Lucas Rogerio Caetano Ferreira</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>JUnit</depends>
+    <depends>org.jetbrains.idea.maven</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <moduleService serviceImplementation="com.luneo7.junit4.intellij.state.ListenersConfig"/>
+        <junitListener implementation="com.luneo7.junit4.intellij.listeners.JUnitListener"/>
+        <junitPatcher implementation="com.luneo7.junit4.intellij.maven.JUnitPatcher"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="org.jetbrains.idea.maven">
+        <importer implementation="com.luneo7.junit4.intellij.maven.Importer"/>
+    </extensions>
+</idea-plugin>
