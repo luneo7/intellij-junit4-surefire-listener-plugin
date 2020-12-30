@@ -55,7 +55,6 @@ class JUnitListener : IDEAJUnitListenerEx {
                 l.testFinished(Description.createTestDescription(className, methodName))
             }
         }
-
     }
 
     override fun testRunStarted(name: String?) {
