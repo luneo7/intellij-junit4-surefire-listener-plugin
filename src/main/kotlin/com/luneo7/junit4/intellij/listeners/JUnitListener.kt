@@ -12,20 +12,20 @@ class JUnitListener : IDEAJUnitListenerEx {
         val PARAMETER_NAME = "jlisteners"
     }
 
-    private var listeners: List<Any?> = emptyList()
+    private var listeners: List<Any> = emptyList()
 
     init {
         val property = System.getProperty(PARAMETER_NAME)
         if (property != null) {
-            val split = property.split(",")
-            listeners = split.map { c ->
-                try {
-                    Class.forName(c).newInstance()
-                } catch (e: ClassNotFoundException) {
-                    println("Class $c was not found, not listener will be used for that class")
-                    null
+            listeners = property.split(",")
+                .mapNotNull { c ->
+                    try {
+                        Class.forName(c).newInstance()
+                    } catch (e: ClassNotFoundException) {
+                        println("Class $c was not found, not listener will be used for that class")
+                        null
+                    }
                 }
-            }
         }
     }
 

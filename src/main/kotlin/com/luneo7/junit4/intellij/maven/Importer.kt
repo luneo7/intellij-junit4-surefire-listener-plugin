@@ -41,11 +41,7 @@ class Importer : MavenImporter("org.apache.maven.plugins", "maven-surefire-plugi
             val surefire = mavenProject.plugins
                 .first { m -> "maven-surefire-plugin" == m.artifactId }
 
-            if (surefire != null &&
-                surefire.configurationElement != null &&
-                surefire.configurationElement!!.children != null
-            ) {
-
+            if (surefire?.configurationElement?.children != null) {
                 val listener = surefire.configurationElement!!
                     .children
                     .filter { e -> e.name == "properties" }
