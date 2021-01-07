@@ -2,7 +2,9 @@
 
 # JUnit 4 Surefire Listener Changelog
 
-## [Unreleased]
+## [0.0.3]
+### Added
+- Convert to Java
 
 ## [0.0.2]
 ### Added
